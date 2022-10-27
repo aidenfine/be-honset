@@ -24,7 +24,7 @@ export default function Dashboard(){
         }
     };
 
-    //get user Data
+    //get user Datda
     useEffect(() =>{
         getData();
     }, [user, loading]);
