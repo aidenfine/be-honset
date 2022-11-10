@@ -5,7 +5,7 @@ import { useState } from "react";
 import { async } from "@firebase/util";
 import Router from "next/router";
 import { collection, doc, onSnapshot, query, where } from "firebase/firestore";
-import  Message  from '../components/Message'
+import  Message  from '../components/message'
 
 
 
