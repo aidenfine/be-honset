@@ -33,7 +33,7 @@ export default function Dashboard(){
         return unsubscribe;
     };
 
-    //get user Datda
+    //get user Data
     useEffect(() =>{
         getData();
     }, [user, loading]);
@@ -44,7 +44,7 @@ export default function Dashboard(){
     return(
         <div>
 
-            <h1>Your Posts</h1>
+            <h1>Your Post's</h1>
             <div>
                 {posts.map((post) =>{
                     return(
