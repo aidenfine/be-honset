@@ -4,11 +4,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { async } from "@firebase/util";
 import Router from "next/router";
-import { collection, doc, onSnapshot, query, where } from "firebase/firestore";
+import { collection, deleteDoc, doc, onSnapshot, query, where } from "firebase/firestore";
 import  Message  from '../components/message'
-
-
-
 
 
 export default function Dashboard(){
@@ -43,17 +40,17 @@ export default function Dashboard(){
 
     return(
         <div>
-
-            <h1>Your Post's</h1>
+            <h1 className="text-slate-200">Your Post's</h1>
             <div>
                 {posts.map((post) =>{
                     return(
-                        <Message {...post} key={post.id}></Message>
+                        <Message {...post} key={post.id}>
+                        </Message>
                     );
                 })}
             </div>
-            <div>Posts</div>
-            <button onClick={() => auth.signOut()}>Sign out</button>
+            <div className="text-slate-200">Posts</div>
+            <button className="font-medium bg-indigo-500 text-white py-2 px-4 rounded-lg text-sm" onClick={() => auth.signOut()}>Sign out</button>
         </div>
     )
 

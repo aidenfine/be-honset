@@ -8,7 +8,7 @@ export default function Nav(){
     return(
         <nav className="flex justify-between items-center py-10">
             <Link href="/">
-            <button className="text-lg font-medium text-black opacity-87" >beHonset.</button>
+            <button className="text-lg font-medium text-lightblue opacity-87" >beHonset.</button>
             </Link>
             <Link href="/about">
             <button className="flex items-center gap-2" >About</button>

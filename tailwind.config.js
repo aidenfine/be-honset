@@ -6,6 +6,9 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    // colors: {
+    //   whiteText: '##ffffffe2'
+    // },
     extend: {
       fontFamily: {
         raleway: 'Raleway',

@@ -36,7 +36,7 @@ export default function Home() {
       </Head>
 
      <div className='my-12 text-lg font-medium'>
-      <h2 >This is what people are up to</h2>
+      <h2 className='text-slate-200'>This is what people are up to</h2>
       {allPosts.map(post => 
       <Message key={post.id}{...post}>
 

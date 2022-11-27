@@ -4,11 +4,7 @@ import { auth } from "../utils/firebase";
 import {useRouter} from "next/router"
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useEffect } from "react";
-
-
-
-
-
+import { toast } from 'react-toastify'
 
 export default function Login(){
     const route = useRouter();
@@ -21,12 +17,26 @@ export default function Login(){
         try {
             const result = await signInWithPopup(auth, googleProvider)
             route.push("/")
+
+            toast.success(`Welcome ${user.displayName}`,{
+                position: "top-right",
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            })
             console.log("logged in")
         } catch (error) {
             console.log(error)
             
         }
     }
+
+    console.log(user.displayName);
+
 
     useEffect(()=>{
         if(user){
@@ -41,8 +51,7 @@ export default function Login(){
         <div className="justify-center items-center shadow-xl w-15 md:max-w-2xl mt-20  p-10 text-black rounded-lg bg-white">
             <h2 className="text-2xl font-medium">Join Now</h2>
             <div>
-                <h3 className="py-4">Sign in</h3>
-                <button onClick={GoogleLogin} className="text-white bg-gray-700 w-65 font font-medium rounded-lg flex align-middle p-4">
+                <button onClick={GoogleLogin} className="text-white bg-gray-900 w-65 font font-medium rounded-lg flex align-middle p-4">
                     <FcGoogle className="text-2xl"/>
                     Sign in with Google
                 </button>

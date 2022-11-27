@@ -75,13 +75,13 @@ export default function post(){
     
     
     return(
-        <div className='my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto'>
+        <div className='my-20 p-12 shadow-lg rounded-lg max-w-md mx-auto text-white	'>
             <form onSubmit={submitPost}>
-                <h1 className='text-2xl font-bold'>New Post</h1>
+                <h1 className='text-2xl font-bold text-white'>New Post</h1>
                 <div>
                     <textarea value={post.description} 
                     onChange={(e) => setPost({...post, description: e.target.value})}
-                    className='bg-slate-800 h-28 w-full text-white rounded-lg text-sm p-1'></textarea>
+                    className='bg-neutral-700 h-28 w-full text-slate-200 rounded-lg text-sm p-1'></textarea>
                     <p className={`font-medium text-sm ${post.description.length > 200 ? 'text-red-600 font-bold' : ''}`}>{post.description.length}/200</p>
                 </div>
                 <button type='submit'
