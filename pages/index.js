@@ -11,6 +11,20 @@ export default function Home() {
   // create state with all posts
 
   const [allPosts, setAllPosts] = useState([]);
+  // const [renderHomePage, setHomePage] = useState([]);
+  
+//   const checkIfUserLoggedIn = async() => {
+//     if(typeof user === 'undefined'){
+//       return (
+//         <h1>Not Logged in</h1>
+//       )
+//     }
+// };
+
+// useEffect(() => {
+//   checkIfUserLoggedIn();
+// })
+
 
   const getPosts = async () => {
     const collectionRef = collection(db, "posts");
@@ -27,6 +41,7 @@ export default function Home() {
   },[]);
 
 
+
   return (
     <div>
       <Head>
@@ -36,7 +51,7 @@ export default function Home() {
       </Head>
 
      <div className='my-12 text-lg font-medium'>
-      <h2 className='text-slate-200'>This is what people are up to</h2>
+      <h2 className='text-slate-200'>This is what people are up to...</h2>
       {allPosts.map(post => 
       <Message key={post.id}{...post}>
 

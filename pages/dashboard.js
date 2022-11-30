@@ -50,7 +50,7 @@ export default function Dashboard(){
                 })}
             </div>
             <div className="text-slate-200">Posts</div>
-            <button className="font-medium bg-indigo-500 text-white py-2 px-4 rounded-lg text-sm" onClick={() => auth.signOut()}>Sign out</button>
+            <button className="font-medium bg-red-500 text-white py-2 px-4 rounded-lg text-sm" onClick={() => auth.signOut()}>Sign out</button>
         </div>
     )
 

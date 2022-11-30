@@ -18,7 +18,7 @@ export default function Login(){
             const result = await signInWithPopup(auth, googleProvider)
             route.push("/")
 
-            toast.success(`Welcome ${user.displayName}`,{
+            toast.success(`Logged in!`,{
                 position: "top-right",
                 autoClose: 1500,
                 hideProgressBar: false,
@@ -35,7 +35,6 @@ export default function Login(){
         }
     }
 
-    console.log(user.displayName);
 
 
     useEffect(()=>{
@@ -48,10 +47,10 @@ export default function Login(){
     }, [user]);
     return(
     <div className="grid-cols-1">
-        <div className="justify-center items-center shadow-xl w-15 md:max-w-2xl mt-20  p-10 text-black rounded-lg bg-white">
-            <h2 className="text-2xl font-medium">Join Now</h2>
+        <div className="justify-center items-center shadow-xl w-15 md:max-w-2xl mt-20  p-10 text-black rounded-lg bg-neutral-800">
+            <h2 className="text-2xl font-medium text-slate-200">Join Now</h2>
             <div>
-                <button onClick={GoogleLogin} className="text-white bg-gray-900 w-65 font font-medium rounded-lg flex align-middle p-4">
+                <button onClick={GoogleLogin} className="text-slate-200 w-65 font font-medium rounded-lg flex align-middle p-4">
                     <FcGoogle className="text-2xl"/>
                     Sign in with Google
                 </button>
